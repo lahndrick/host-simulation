@@ -123,7 +123,7 @@ network Hybrid
         etherSwitch4.ethg++ <--> Ether1000M <--> accessPoint4.ethg++;
         etherSwitch5.ethg++ <--> Ether1000M <--> accessPoint5.ethg++;
 
-        //connecting 50 ethernet hosts, 20 max per node
+        //connecting 50 ethernet hosts, 10 max per node
         for x=0..numHosts-1 {
             etherSwitch1.ethg++ <--> Ether1000M <--> standardHost1[x].ethg++;
             etherSwitch2.ethg++ <--> Ether1000M <--> standardHost2[x].ethg++;
