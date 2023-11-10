@@ -1,0 +1,93 @@
+[general]
+network = Hybrid
+sim-time-limit = 3600s
+
+**.numWHosts = ${2..10 step 4}
+
+**.channel.throughput.statistic-recording = true
+**.channel.throughput.result-recording-modes = all
+**.*.vector-recording = true
+**.*.vector-recording-intervals = 0..900
+**.*.scalar-recording =true
+
+**.addDefaultRoutes = false
+
+#server config
+**.server.app[*].sendInterval = 0.1s
+**.server.app[*].packetLen = 1400B
+**.server.app[*].videoSize = 1Gb
+
+#numApps
+**.server.numApps = 1
+**.standardHost1[*].numApps = 1
+**.standardHost2[*].numApps = 1
+**.standardHost3[*].numApps = 1
+**.standardHost4[*].numApps = 1
+**.standardHost5[*].numApps = 1
+*.wirelessHost1[*].numApps = 1
+*.wirelessHost2[*].numApps = 1
+*.wirelessHost3[*].numApps = 1
+*.wirelessHost4[*].numApps = 1
+*.wirelessHost5[*].numApps = 1
+*.accessPoint1.numApps = 1
+*.accessPoint2.numApps = 1
+*.accessPoint3.numApps = 1
+*.accessPoint4.numApps = 1
+*.accessPoint5.numApps = 1
+
+#server and clients
+**.server.app[*].typename = "UdpVideoStreamServer"
+**.standardHost1[*].app[*].typename = "UdpVideoStreamClient"
+**.standardHost2[*].app[*].typename = "UdpVideoStreamClient"
+**.standardHost3[*].app[*].typename = "UdpVideoStreamClient"
+**.standardHost4[*].app[*].typename = "UdpVideoStreamClient"
+**.standardHost5[*].app[*].typename = "UdpVideoStreamClient"
+*.wirelessHost1[*].app[*].typename = "UdpVideoStreamClient"
+*.wirelessHost2[*].app[*].typename = "UdpVideoStreamClient"
+*.wirelessHost3[*].app[*].typename = "UdpVideoStreamClient"
+*.wirelessHost4[*].app[*].typename = "UdpVideoStreamClient"
+*.wirelessHost5[*].app[*].typename = "UdpVideoStreamClient"
+
+#server addresses
+**.standardHost1[*].app[*].serverAddress = "server"
+**.standardHost2[*].app[*].serverAddress = "server"
+**.standardHost3[*].app[*].serverAddress = "server"
+**.standardHost4[*].app[*].serverAddress = "server"
+**.standardHost5[*].app[*].serverAddress = "server"
+*.wirelessHost1[*].app[*].serverAddress = "server"
+*.wirelessHost2[*].app[*].serverAddress = "server"
+*.wirelessHost3[*].app[*].serverAddress = "server"
+*.wirelessHost4[*].app[*].serverAddress = "server"
+*.wirelessHost5[*].app[*].serverAddress = "server"
+
+#ports
+**.server.app[*].localPort = 1000
+**.standardHost1[*].app[*].serverPort = 1000
+**.standardHost2[*].app[*].serverPort = 1000
+**.standardHost3[*].app[*].serverPort = 1000
+**.standardHost4[*].app[*].serverPort = 1000
+**.standardHost5[*].app[*].serverPort = 1000
+*.wirelessHost1[*].app[*].serverPort = 1000
+*.wirelessHost2[*].app[*].serverPort = 1000
+*.wirelessHost3[*].app[*].serverPort = 1000
+*.wirelessHost4[*].app[*].serverPort = 1000
+*.wirelessHost5[*].app[*].serverPort = 1000
+
+#interfaces
+*.accessPoint1.numWlanInterfaces = default
+*.accessPoint2.numWlanInterfaces = default
+*.accessPoint3.numWlanInterfaces = default
+*.accessPoint4.numWlanInterfaces = default
+*.accessPoint5.numWlanInterfaces = default
+
+#SSID's
+*.accessPoint1.wlan[*].mgmt.ssid = "AP1"
+*.accessPoint2.wlan[*].mgmt.ssid = "AP2"
+*.accessPoint3.wlan[*].mgmt.ssid = "AP3"
+*.accessPoint4.wlan[*].mgmt.ssid = "AP4"
+*.accessPoint5.wlan[*].mgmt.ssid = "AP5"
+*.wirelessHost1[*].wlan[*].agent.defaultSsid = "AP1"
+*.wirelessHost2[*].wlan[*].agent.defaultSsid = "AP2"
+*.wirelessHost3[*].wlan[*].agent.defaultSsid = "AP3"
+*.wirelessHost4[*].wlan[*].agent.defaultSsid = "AP4"
+*.wirelessHost5[*].wlan[*].agent.defaultSsid = "AP5"
